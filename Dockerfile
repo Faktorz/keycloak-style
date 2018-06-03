@@ -1,14 +1,24 @@
-FROM jboss/keycloak-mongo:1.9.7.Final
+FROM jboss/keycloak:3.2.1.Final
 MAINTAINER Bixlabs, eddsuarez@bixlabs.com
 
-ADD theme/base/login/html/*.ftl /opt/jboss/keycloak/themes/base/login/
-ADD theme/base/email/messages/*.properties /opt/jboss/keycloak/themes/base/email/messages/
-#ADD theme/keycloak/email/resources/img/*.png /opt/jboss/keycloak/themes/keycloak/email/resources/img/
-ADD theme/keycloak/login/resources/css/*.css /opt/jboss/keycloak/themes/keycloak/login/resources/css/
+USER root
 
-ADD standalone.xml /opt/jboss/keycloak/standalone/configuration/
-ADD keycloak-server.json /opt/jboss/keycloak/standalone/configuration/
-ADD godaddy-chained.keycloak.jks /opt/jboss/keycloak/standalone/configuration/
+ADD openshift-entrypoint.sh /usr/bin/
+ADD start-keycloak.sh /usr/bin/
+#ADD theme/base/login/html/*.ftl /opt/jboss/keycloak/themes/base/login/
+#ADD theme/base/email/messages/*.properties /opt/jboss/keycloak/themes/base/email/messages/
+#ADD theme/keycloak/login/resources/css/*.css /opt/jboss/keycloak/themes/keycloak/login/resources/css/
 
-EXPOSE 8080 8180
+#Give correct permissions when used in an OpenShift environment.
+RUN chown -R jboss:0 $JBOSS_HOME/standalone && \
+    chmod -R g+rw $JBOSS_HOME/standalone && \
+    chown -R jboss:0 $JBOSS_HOME/modules/system/layers/base && \
+    chmod -R g+rw $JBOSS_HOME/modules/system/layers/base && \
+    chown -R jboss:0 /tmp && \
+    chmod -R g+rw /tmp
 
+USER 1000
+
+ENTRYPOINT [ "openshift-entrypoint.sh" ]
+
+CMD ["start-keycloak.sh", "-b", "0.0.0.0"]
