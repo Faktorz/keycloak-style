@@ -19,6 +19,6 @@ RUN chown -R jboss:0 $JBOSS_HOME/standalone && \
 
 USER 1000
 
-ENTRYPOINT [ "openshift-entrypoint.sh" ]
+ENTRYPOINT [ "/usr/bin/openshift-entrypoint.sh" ]
 
-CMD ["start-keycloak.sh", "-b", "0.0.0.0"]
+CMD ["/usr/bin/start-keycloak.sh", "-b", "0.0.0.0"]
