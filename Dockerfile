@@ -4,8 +4,14 @@ MAINTAINER Bixlabs, eddsuarez@bixlabs.com
 USER root
 
 RUN mkdir -p /opt/jboss/keycloak/themes/faktorz/login/resources/css
+RUN mkdir -p /opt/jboss/keycloak/themes/faktorz/login/resources/img
+RUN mkdir -p /opt/jboss/keycloak/themes/faktorz/login/resources/js
+
 ADD theme/faktorz/login/*.ftl /opt/jboss/keycloak/themes/faktorz/login/
 ADD theme/faktorz/login/*.properties /opt/jboss/keycloak/themes/faktorz/login/
+ADD theme/faktorz/login/resources/css/*.css /opt/jboss/keycloak/themes/faktorz/login/resources/css
+ADD theme/faktorz/login/resources/img/*.* /opt/jboss/keycloak/themes/faktorz/login/resources/img
+ADD theme/faktorz/login/resources/js/*.js /opt/jboss/keycloak/themes/faktorz/login/resources/js
 
 USER 1000
 
