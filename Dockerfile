@@ -3,8 +3,8 @@ MAINTAINER Bixlabs, eddsuarez@bixlabs.com
 
 USER root
 
-ADD openshift-entrypoint.sh /usr/bin/
-ADD start-keycloak.sh /usr/bin/
+ADD openshift-entrypoint.sh /opt/jboss/
+ADD start-keycloak.sh /opt/jboss/
 #ADD theme/base/login/html/*.ftl /opt/jboss/keycloak/themes/base/login/
 #ADD theme/base/email/messages/*.properties /opt/jboss/keycloak/themes/base/email/messages/
 #ADD theme/keycloak/login/resources/css/*.css /opt/jboss/keycloak/themes/keycloak/login/resources/css/
@@ -19,6 +19,6 @@ RUN chown -R jboss:0 $JBOSS_HOME/standalone && \
 
 USER 1000
 
-ENTRYPOINT [ "/usr/bin/openshift-entrypoint.sh" ]
+ENTRYPOINT [ "openshift-entrypoint.sh" ]
 
-CMD ["/usr/bin/start-keycloak.sh", "-b", "0.0.0.0"]
+CMD ["start-keycloak.sh", "-b", "0.0.0.0"]
