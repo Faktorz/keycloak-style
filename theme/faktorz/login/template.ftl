@@ -63,9 +63,9 @@
                     </div>
                 </div>
             </#if>
-            <div id="kc-content" class="${properties.kcContentClass!}">
+            <section>
+              <div id="kc-content" class="${properties.kcContentClass!}">
                 <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">
-
                     <#if displayMessage && message?has_content>
                         <div class="${properties.kcFeedbackAreaClass!}">
                             <div class="alert alert-${message.type}">
@@ -93,7 +93,8 @@
                         </div>
                     </#if>
                 </div>
-            </div>
+              </div>
+            </section>
         </div>
     </div>
 </body>
