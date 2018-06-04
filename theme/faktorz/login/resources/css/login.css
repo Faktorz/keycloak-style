@@ -1,6 +1,8 @@
-.login-brand{
-  background-image: url('../img/dark_logo_transparent.svg');
-}
+.alert {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+	}
 
 .wrapper {
 	margin-top: 80px;
