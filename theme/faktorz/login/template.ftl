@@ -38,7 +38,15 @@
     <div id="kc-container" class="${properties.kcContainerClass!}">
         <div id="kc-container-wrapper" class="${properties.kcContainerWrapperClass!}">
             <div id="kc-header" class="${properties.kcHeaderClass!}">
-                <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">FaktorZ</div>
+              <nav class="navbar navbar-expand-lg px-md-0">
+              	<a class="navbar-brand" style="width:200px" href="${properties.kcLogoLink!}">
+              		<span class="logo-default">
+              			<img src="${url.resourcesPath}/img/dark_logo_transparent.svg" alt="Faktorz Logo">
+              		</span>
+              	</a>
+              	<div class="collapse navbar-collapse" id="navbarNav"></div>
+              </nav>
+              <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">FaktorZ</div>
             </div>
             <#if realm.internationalizationEnabled>
                 <div id="kc-locale" class="${properties.kcLocaleClass!}">
