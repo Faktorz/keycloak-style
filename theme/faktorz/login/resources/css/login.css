@@ -4,6 +4,22 @@
   margin: 0 auto;
 	}
 
+.alert-error {
+  color:#F64D62;
+}
+
+.alert-warning {
+  color:##ff9900;
+}
+
+.alert-success {
+  color:#FFFFFF;
+}
+
+.alert-info {
+  color:#FFFFFF;
+}
+
 .wrapper {
 	margin-top: 80px;
   margin-bottom: 80px;
@@ -18,7 +34,7 @@
 
   .form-signin-heading,
 	.checkbox {
-	  margin-bottom: 30px;
+	  margin-bottom: 80px;
 	}
 
 	.checkbox {
