@@ -13,6 +13,10 @@ ADD theme/faktorz/login/resources/css/*.css /opt/jboss/keycloak/themes/faktorz/l
 ADD theme/faktorz/login/resources/img/*.* /opt/jboss/keycloak/themes/faktorz/login/resources/img/
 ADD theme/faktorz/login/resources/js/*.js /opt/jboss/keycloak/themes/faktorz/login/resources/js/
 
+RUN mkdir -p /opt/jboss/keycloak/themes/faktorz/email/messages/
+
+ADD theme/faktorz/email/messages/*.properties /opt/jboss/keycloak/themes/faktorz/email/messages/
+
 USER 1000
 
 ENTRYPOINT [ "openshift-entrypoint.sh" ]
