@@ -37,13 +37,9 @@
 <body class="${properties.kcBodyClass!}">
     <div id="kc-container" class="${properties.kcContainerClass!}">
         <div id="kc-container-wrapper" class="${properties.kcContainerWrapperClass!}">
-
             <div id="kc-header" class="${properties.kcHeaderClass!}">
-                <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}"><#nested "header">
-The Digital Garage
-</div>
+                <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">FaktorZ</div>
             </div>
-
             <#if realm.internationalizationEnabled>
                 <div id="kc-locale" class="${properties.kcLocaleClass!}">
                     <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
@@ -58,7 +54,6 @@ The Digital Garage
                     </div>
                 </div>
             </#if>
-
             <div id="kc-content" class="${properties.kcContentClass!}">
                 <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">
 
